@@ -24,6 +24,5 @@ export class CityListComponent implements OnInit {
           };
         }))
     );
-    console.log(this.cities);
   }
 }
