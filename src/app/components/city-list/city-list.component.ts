@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchWeatherService } from '../../services/fetch-weather.service';
-import { City } from '../../interfaces';
+import { City, Forecast } from '../../interfaces';
 import { convertToCelsius } from 'src/app/utils/convertUtils';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-city-list',
@@ -10,8 +11,12 @@ import { convertToCelsius } from 'src/app/utils/convertUtils';
 })
 export class CityListComponent implements OnInit {
   public cities: City[] = [];
+  public forecast: Forecast | undefined;
 
-  constructor(private fetchWeatherService: FetchWeatherService) {}
+  constructor(
+    private fetchWeatherService: FetchWeatherService,
+    private stateService: StateService
+  ) {}
 
   ngOnInit(): void {
     this.fetchWeatherService.fetchCities().subscribe(
@@ -24,5 +29,8 @@ export class CityListComponent implements OnInit {
           };
         }))
     );
+    this.stateService.getForecast().subscribe((result) => {
+      this.forecast = result;
+    });
   }
 }

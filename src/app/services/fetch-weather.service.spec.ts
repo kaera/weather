@@ -45,4 +45,26 @@ describe('FetchWeatherService', () => {
     const req = httpMock.expectOne(url);
     expect(req.request.method).toEqual('GET');
   });
+  it('should fetch weather forecast for one city', () => {
+    const queryString = ['q=Amsterdam', 'cnt=5'].join('&');
+    const url =
+      config.BASE_URL +
+      config.forecastPath +
+      queryString +
+      '&appid=' +
+      config.API_KEY;
+    const expectedForecast = [
+      { time: '21:00:00', temperature: 12, windSpeed: 0.3 },
+      { time: '22:00:00', temperature: 12, windSpeed: 0.3 },
+      { time: '21:00:00', temperature: 12, windSpeed: 0.3 },
+    ];
+
+    service.fetchForecast('Amsterdam').subscribe((response) => {
+      expect(response).toEqual(expectedForecast);
+      expect(response.length).toEqual(2);
+    });
+
+    const req = httpMock.expectOne(url);
+    expect(req.request.method).toEqual('GET');
+  });
 });

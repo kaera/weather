@@ -19,7 +19,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.toolbar span')?.textContent).toContain(
-      'Welcome'
+      'Weather'
     );
   });
 });

@@ -2,3 +2,6 @@
     <p *ngIf="cities.length === 0" class="loader">Loading...</p>
     <app-city *ngFor="let city of cities" [city]="city"></app-city>
 </div>
+<div *ngIf="forecast">
+    <app-forecast-chart [lineChartData]="forecast.data" [lineChartLabels]="forecast.labels"></app-forecast-chart>
+</div>
