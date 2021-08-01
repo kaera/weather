@@ -1,0 +1,11 @@
+<div *ngIf="city" class="city" (click)="onClick(city.name)">
+    <div class="name">
+        City: {{ city.name }}
+    </div>
+    <div class="temperature">
+        Temp: {{ city.temperature }} °C
+    </div>
+    <div class="wind">
+        Wind speed: {{ city.windSpeed }} m/s
+    </div>
+</div>

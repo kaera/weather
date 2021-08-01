@@ -1,0 +1,4 @@
+<div class="city-list">
+    <p *ngIf="cities.length === 0" class="loader">Loading...</p>
+    <app-city *ngFor="let city of cities" [city]="city"></app-city>
+</div>
