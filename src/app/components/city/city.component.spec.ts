@@ -35,7 +35,7 @@ describe('CityComponent', () => {
   it('should render city tile', () => {
     const city = {
       name: 'Test',
-      temperature: 12,
+      temperature: 12.3,
       windSpeed: 0.8,
     };
     const { containerComponent, fixture, element } = createContainer();

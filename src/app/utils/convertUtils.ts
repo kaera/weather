@@ -1,7 +1,7 @@
 import { Forecast } from '../interfaces';
 
 export function convertToCelsius(tempKelvin: number) {
-  return Math.floor(tempKelvin - 273.15);
+  return (tempKelvin - 273.15).toFixed(1);
 }
 
 export function convertForecastToChartFormat(data: any): Forecast {
@@ -17,8 +17,8 @@ export function convertForecastToChartFormat(data: any): Forecast {
   return {
     labels: chartLabels,
     data: [
-      { data: tempData, label: 'Temp' },
-      { data: windData, label: 'Wind' },
+      { data: tempData, label: 'Temperature °C' },
+      { data: windData, label: 'Wind speed m/s' },
     ],
   };
 }

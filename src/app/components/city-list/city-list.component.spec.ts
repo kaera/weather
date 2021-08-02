@@ -18,8 +18,8 @@ describe('ComponentCityListContainerComponent', () => {
 
   beforeEach(async () => {
     const data = [
-      { name: 'Test', temperature: 12, windSpeed: 0.3 },
-      { name: 'Test2', temperature: 13, windSpeed: 0.5 },
+      { name: 'Test', temperature: 12.6, windSpeed: 0.3 },
+      { name: 'Test2', temperature: 13.3, windSpeed: 0.5 },
     ] as City[];
 
     fakeFetchWeatherService = jasmine.createSpyObj<FetchWeatherService>(

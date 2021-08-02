@@ -15,7 +15,7 @@ describe('StateService', () => {
   it('should get updated forecast', () => {
     const forecast = {
       labels: ['test', 'test2'],
-      data: [{ data: [12, 13, 14], label: 'test3' }],
+      data: [{ data: [12.6, 13.0, 14.1], label: 'test3' }],
     } as Forecast;
 
     service.setForecast(forecast);

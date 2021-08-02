@@ -17,9 +17,10 @@ describe('AppComponent', () => {
   it('should render toolbar with welcome', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
+    const title = fixture.componentInstance.title;
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.toolbar span')?.textContent).toContain(
-      'Weather'
+      title
     );
   });
 });

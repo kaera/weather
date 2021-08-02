@@ -27,8 +27,8 @@ describe('FetchWeatherService', () => {
 
   it('should fetch cities weather', () => {
     const expectedCities = [
-      { name: 'Test', temperature: 12, windSpeed: 0.3 },
-      { name: 'Test2', temperature: 13, windSpeed: 0.5 },
+      { name: 'Test', temperature: 12.0, windSpeed: 0.3 },
+      { name: 'Test2', temperature: 13.4, windSpeed: 0.5 },
     ] as City[];
     const url =
       config.BASE_URL +
@@ -54,9 +54,9 @@ describe('FetchWeatherService', () => {
       '&appid=' +
       config.API_KEY;
     const expectedForecast = [
-      { time: '21:00:00', temperature: 12, windSpeed: 0.3 },
-      { time: '22:00:00', temperature: 12, windSpeed: 0.3 },
-      { time: '21:00:00', temperature: 12, windSpeed: 0.3 },
+      { time: '21:00:00', temperature: 12.0, windSpeed: 0.3 },
+      { time: '22:00:00', temperature: 11.8, windSpeed: 0.3 },
+      { time: '23:00:00', temperature: 10.5, windSpeed: 0.3 },
     ];
 
     service.fetchForecast('Amsterdam').subscribe((response) => {
